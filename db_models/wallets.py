@@ -5,20 +5,27 @@ from config_vars import BBDD_CONNECTION
 Base = declarative_base()
 
 
-class HealthInsurances(Base):
-    __tablename__ = "health_insurances"
+class Wallets(Base):
+    __tablename__ = "wallets"
     print("entering parameters config")
     engine = create_engine(BBDD_CONNECTION)
     metadata = MetaData()
-    ins = Table("health_insurance", metadata, autoload=True, autoload_with=engine, schema='hca')
+    wal = Table("wallets", metadata, autoload=True, autoload_with=engine, schema='billetera_abel')
     id_not_in_db = Column(Integer, primary_key=True)
     print("finished config for parameters")
     
     @classmethod
-    def insurances_by_id(cls, *, hos_id):
+    def single_walletss(cls, *, wal_id):
         """
-        Cuáles son las obras sociales
+        cual es el wallet con id 
         """
-        query = select([cls.ins]).where(cls.ins.c.hos_id == hos_id)
+        query = select([cls.wal]).where(cls.wal.c.wal_id == wal_id)
         return query
         
+    @classmethod
+    def all_wallets(cls):
+        """
+        Cuáles son todas las wallets
+        """
+        query = select([cls.wal])
+        return query
