@@ -166,17 +166,18 @@ CREATE SEQUENCE billetera_abel.seq_transactions START 10;
 
 -- Modificar las tablas para asignar los valores de las secuencias por defecto en las primary keys
 -- Modificar la tabla type_of_transactions para usar la secuencia
-ALTER TABLE billetera_abel.type_of_transactions ALTER COLUMN tpe_id SET DEFAULT nextval('seq_type_of_transactions');
+ALTER TABLE billetera_abel.type_of_transactions ALTER COLUMN tpe_id SET DEFAULT nextval('billetera_abel.seq_type_of_transactions');
+
 -- Modificar la tabla users para usar la secuencia
-ALTER TABLE billetera_abel.users ALTER COLUMN usr_id SET DEFAULT nextval('seq_users');
+ALTER TABLE billetera_abel.users ALTER COLUMN usr_id SET DEFAULT nextval('billetera_abel.seq_users');
 -- Modificar la tabla wallets para usar la secuencia
-ALTER TABLE billetera_abel.wallets ALTER COLUMN wal_id SET DEFAULT nextval('seq_wallets');
+ALTER TABLE billetera_abel.wallets ALTER COLUMN wal_id SET DEFAULT nextval('billetera_abel.seq_wallets');
 -- Modificar la tabla companies para usar la secuencia
-ALTER TABLE billetera_abel.companies ALTER COLUMN cpn_id SET DEFAULT nextval('seq_companies');
+ALTER TABLE billetera_abel.companies ALTER COLUMN cpn_id SET DEFAULT nextval('billetera_abel.seq_companies');
 -- Modificar la tabla contacts para usar la secuencia
-ALTER TABLE billetera_abel.contacts ALTER COLUMN con_id SET DEFAULT nextval('seq_contacts');
+ALTER TABLE billetera_abel.contacts ALTER COLUMN con_id SET DEFAULT nextval('billetera_abel.seq_contacts');
 -- Modificar la tabla transactions para usar la secuencia
-ALTER TABLE billetera_abel.transactions ALTER COLUMN tra_id SET DEFAULT nextval('seq_transactions');
+ALTER TABLE billetera_abel.transactions ALTER COLUMN tra_id SET DEFAULT nextval('billetera_abel.seq_transactions');
 
 -- Utilizar otro usuario para lectura y asignar privilegios para el esquema billetera_abel
 -- grant select on all tables in schema billetera_abel TO cristian;

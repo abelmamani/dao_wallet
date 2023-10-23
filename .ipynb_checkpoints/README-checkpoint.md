@@ -26,11 +26,14 @@
   
 ### Diseño de la BD
 ![Diagrama](DER.png)
+
 #### Before you begin, you’ll need:
 * IDE or Text editor 
 * Python 3.6 or 3.7
 * pip install --upgrade pip
 
+### 
+* [requeriments](requeriments.txt)
 #### Create database schema
 * [dboraclescripts](dboraclescripts.sql)
 * [dbpostgresqlscripts](dbpostgresqlscripts.sql)
